@@ -1,0 +1,13 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+    <Fernando Torres Yánez> -- <Front End Developer> -- <@webmasterft>
+    <Julio Arteaga> -- <Diseñador> 
+    <Paola Bastidas> -- <Diseñador>
+    <Miguel Rivas > -- <Diseñador>
+
+# TECHNOLOGY COLOPHON
+	<EL COMERCIO - ECUADOR:: http://www.elcomercio.com/ >
+
+    HTML5, CSS3, jQuery, Modernizr, PHP, Handlebars.js,
