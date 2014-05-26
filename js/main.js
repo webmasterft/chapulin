@@ -1,8 +1,11 @@
 $(function(){
 	var palabra = ["defenderme" , "defendernos"],
 		palabraIngresada='',
-		menu = $('#menu');
-		corazon = '<i class="fa fa-fw"></i>';
+		menu = $('#menu'),
+		corazon = '<i class="fa fa-fw"></i>',
+		pantallaAnimacion = '',
+		pantallaAnimacion = '',
+	   	paginaCargar = '';
 		
 
 	$('#pt-main #ingresar').on('click',function() {
@@ -20,6 +23,9 @@ $(function(){
 
 	menu.find('li').on("mouseenter mouseleave click", function(e){
 	   var idMenu = $(this).data('menu');
+	   pantallaAnimacion = $(this).data('pagina');
+	   idMenu = idMenu.slice(0,-1);
+
 	   if(e.type === "mouseenter"){
 	       $('#chapulin').stop().hide();
 	       $('div#'+idMenu).stop().fadeIn();
@@ -27,11 +33,26 @@ $(function(){
 	        $('#chapulin').stop().fadeIn();  
 	        $('div#'+idMenu).stop().fadeOut();     
 	   }else{
-	   	var $pantalla = $(this).data('pagina'),
-	   		$paginaCargar = idMenu;
-	   		nextPage($pantalla, $paginaCargar);
+	   		pantallaAnimacion = $(this).data('pagina');
+	   		paginaCargar = $(this).data('menu');
+	   		paginaCargar = 'internas/' + paginaCargar + '.html';
+	   		console.log(paginaCargar);
+	   		paginaLista = cargarPaginas(paginaCargar);
+	   		nextPage(pantallaAnimacion);
+	   		$('.pt-page-'+ pantallaAnimacion).html(paginaLista);
 	   }
 	});//menu events
+
+	$(document).on("click", "#menuInt li", function(){
+		paginaCargar = $(this).data('menu');
+		paginaCargar = 'internas/' + paginaCargar + '.html';
+		paginaLista = cargarPaginas(paginaCargar);
+		$('.pt-page-'+ pantallaAnimacion).html(paginaLista);
+	
+	});
+
+
+
 
 
 
@@ -68,47 +89,18 @@ $(function(){
 
 	//console.log($pages.eq(current));
 	
-	function nextPage($pantalla , $paginaCargar) {
+	function nextPage(pantallaAnimacion) {
 		if( isAnimating ) {
 			return false;
 		}
 		isAnimating = true;
 		var $currPage = $pages.eq(current);
-		current = $pantalla - 2;
-
-		paginaCargar = 'internas/' + $paginaCargar + '.html';
-		console.log(paginaCargar);
-
-		
-
-
-
+		current = pantallaAnimacion - 2;
 
 		var $nextPage = $pages.eq(current).addClass( 'pt-page-current' ),
 			outClass = '', inClass = '';
 			outClass = 'pt-page-rotateFall pt-page-ontop';
 			inClass = 'pt-page-scaleUp';
-
-		
-			$.ajax({
-				url: paginaCargar,
-				type: 'POST',
-				dataType: 'html',
-				//data: {param1: 'value1'},
-			
-				beforeSend: function(data) {
-					console.log("success");
-				},
-				success: function(data) {
-					$nextPage.html(data);
-				},
-				error: function(data) {
-					//console.log("complete");
-				}
-			});
-
-
-
 
 		$currPage.addClass( outClass ).on( animEndEventName, function() {
 			$currPage.off( animEndEventName );
@@ -151,4 +143,24 @@ $(function(){
 //})();
 /* ANIMACION PAGINAS*/
 
+	function cargarPaginas(paginaCargar){
+		var result="";
+		$.ajax({
+				url: paginaCargar,
+				type: 'POST',
+				dataType: 'html',
+				async: false, 
+				//data: {param1: 'value1'},
+				beforeSend: function(data) {
+					//console.log("success");
+				},
+				success: function(data) {
+					result = data;
+				},
+				error: function(data) {
+					//console.log("complete");
+				}
+			});//llamada ajax
+		return result; 
+	}
 });

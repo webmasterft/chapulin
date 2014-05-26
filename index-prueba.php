@@ -36,15 +36,15 @@
         <![endif]-->
         <div class="contenedorMenu">
             <ul id="menu">
-                <li data-menu="personaje" data-pagina="3">Chapulin</li>
+                <li data-menu="personaje1" data-pagina="3">Chapulin</li>
                 <i class="fa fa-fw"></i>
-                <li data-menu="armas" data-pagina="4">Chipote</li>
+                <li data-menu="armas1" data-pagina="4">Chipote</li>
                 <i class="fa fa-fw"></i>
-                <li data-menu="villanos" data-pagina="5">Rascabuche</li>
+                <li data-menu="villanos1" data-pagina="5">Rascabuche</li>
                 <i class="fa fa-fw"></i>
-                <li data-menu="psicologia" data-pagina="6">Chichicuilote</li>
+                <li data-menu="psicologia1" data-pagina="6">Chichicuilote</li>
                 <i class="fa fa-fw"></i>
-                <li data-menu="cronologia" data-pagina="7">Chanfle</li>
+                <li data-menu="cronologia1" data-pagina="7">Chanfle</li>
             </ul>       
         </div>
 

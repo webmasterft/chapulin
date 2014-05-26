@@ -32,6 +32,7 @@ body{
     color:$color-black;
     background:$color-black;
     line-height: $baseLineHeight;
+    letter-spacing: 1px;
 }
 
 
@@ -223,6 +224,7 @@ button{
     float: left;
     font-family: $fontNHaas95 !important;
     font-size: $baseFontSize + 8;
+    cursor: pointer;
   }
 
 }//menuInt
@@ -247,8 +249,8 @@ button{
       width: 0;
       height: 0;
       left: 21px;
-      bottom: -30px;
-      border: 15px solid;
+      bottom: -18px;
+      border: 9px solid;
       border-color: $color-amarillo transparent transparent $color-amarillo;
       
     }
@@ -256,3 +258,23 @@ button{
 }//descrip
 
 
+#txtDescrip{
+  width: 400px;
+  margin: 30px 0 0 20px;
+  color: $color-white;
+  float: left;
+  display: inline-block;
+}
+
+#personaje1{
+  width: 480px;
+  background: url(../img/personaje1.jpg) no-repeat;
+  float: right;
+  display: inline-block;
+  height: 457px;
+}
+
+#personaje2{
+ @extend #personaje1;
+  background: url(../img/personaje2.jpg) no-repeat;
+}
