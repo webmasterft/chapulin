@@ -60,20 +60,30 @@ html, body { height: 100%; }
 }
 
 .pt-page-3 {
-	background: #60d7a9;
+	background: $color-rojo;
+	.container{
+		//background: url('../img/back1.png') no-repeat top left;
+	}
 }
 
 .pt-page-4 {
-	background: #fdc162;
+	background: $color-rojo;
 }
 
 .pt-page-5 {
-	background: #fd6a62;
+	background: $color-rojo;
 }
 
 .pt-page-6 {
-	background: #f68dbb;
+	background: $color-rojo;
 }
+
+.pt-page-7 {
+	background: $color-rojo;
+}
+
+
+
 
 /* Triggers (menu and button) */
 

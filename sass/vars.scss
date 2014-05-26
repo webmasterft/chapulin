@@ -8,6 +8,9 @@ $innerWapperWidth:419px;
 $fontOpenSans: 'Open Sans', sans-serif;
 $fontTinos: 'Tinos', serif;
 $fontLatop: 'Lato', sans-serif;
+$fontNHaas45: 'NHaasGroteskDSStd-45Lt';
+$fontNHaas95: 'NHaasGroteskDSStd-95Blk';
+$fontNHass55: 'NHaasGroteskDSStd-55Rg';
 $font10:0.857em;
 $font17:1.214em;
 
@@ -32,8 +35,32 @@ $color-navbutton:#000;
 
 
 
+@font-face {
+  font-family: 'NHaasGroteskDSStd-45Lt';
+  src: url('fonts/NHaasGroteskDSStd-45Lt.eot') format('eot'), 
+  url('fonts/NHaasGroteskDSStd-45Lt.otf')  format('opentype'),
+  url('fonts/NHaasGroteskDSStd-45Lt.woff') format('woff'), 
+  url('fonts/NHaasGroteskDSStd-45Lt.ttf')  format('truetype'),
+  url('fonts/NHaasGroteskDSStd-45Lt.svg#NHaasGroteskDSStd-45Lt') format('svg'); 
+}
 
+@font-face {
+  font-family: 'NHaasGroteskDSStd-95Blk';
+  src: url('fonts/NHaasGroteskDSStd-95Blk.eot') format('eot'), 
+  url('fonts/NHaasGroteskDSStd-95Blk.otf')  format('opentype'),
+  url('fonts/NHaasGroteskDSStd-95Blk.woff') format('woff'), 
+  url('fonts/NHaasGroteskDSStd-95Blk.ttf')  format('truetype'),
+  url('fonts/NHaasGroteskDSStd-95Blk.svg#NHaasGroteskDSStd-95Blk') format('svg'); 
+}
 
+@font-face {
+  font-family: 'NHaasGroteskDSStd-55Rg';
+  src: url('fonts/NHaasGroteskDSStd-55Rg.eot') format('eot'), 
+  url('fonts/NHaasGroteskDSStd-55Rg.otf')  format('opentype'),
+  url('fonts/NHaasGroteskDSStd-55Rg.woff') format('woff'), 
+  url('fonts/NHaasGroteskDSStd-55Rg.ttf')  format('truetype'),
+  url('fonts/NHaasGroteskDSStd-55Rg.svg#NHaasGroteskDSStd-55Rg') format('svg'); 
+}
 
 
 .blackShadow{

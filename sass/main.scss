@@ -8,6 +8,10 @@
 @import "animations.scss";
 @import "component.scss";
 
+
+
+
+
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic);
 //@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:100,400,600,700,300italic,600italic);
 //@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600,700);
@@ -24,7 +28,7 @@
 
 body{
     font-size: $baseFontSize;
-    font-family: $bodyFontFamily;
+    font-family: $fontNHaas45 !important;
     color:$color-black;
     background:$color-black;
     line-height: $baseLineHeight;
@@ -37,8 +41,20 @@ body{
 	margin: 0px auto;
 	position:relative;
   display: block;
+  padding:0;
 }
 
+
+.contInt{
+  margin:30px;
+}
+
+.contenedorMenu{
+  width:$wapperWidth;
+  position:relative;
+  display: block;
+  margin: 0px auto;
+}
 
 .left{
 	float:left;
@@ -147,7 +163,7 @@ button{
 
 #menu{
   position:absolute;
-  bottom: 40px;
+  top:563px;
   z-index: 9999;
   margin-left: -250px;
   left: 50%;
@@ -157,6 +173,8 @@ button{
     margin:5px;
     display: inline-block;
     cursor:pointer;
+    letter-spacing: 2px;
+    font-size: $baseFontSize + 2;
   }//li
 
   i{
@@ -165,5 +183,76 @@ button{
   }
 
 }//menu
+
+
+.titulo{
+  font-family: $fontNHaas95 !important;
+  color:$color-amarillo;
+  float: left;
+  display: inline-block;
+  margin-right:20px;
+  p{
+    margin:0px;
+    padding:0;
+    &.first{  
+      font-size: $baseFontSize + 26;
+    }//first
+
+    &.second{  
+      font-size: $baseFontSize + 42;
+      margin-top: -40px;
+    }//second
+
+  }//p
+
+}//titulo
+
+#menuInt{
+  display: inline-block;
+  float: left;
+  margin: 33px 0 0 0;
+  li{
+    width: 45px;
+    height: 41px;
+    margin:0 5px;
+    color:$color-rojo;
+    line-height: 41px;
+    text-align: center;
+    background:url('../img/corazonMenu.png') no-repeat top left;
+    display: inline-block;
+    float: left;
+    font-family: $fontNHaas95 !important;
+    font-size: $baseFontSize + 8;
+  }
+
+}//menuInt
+
+.descrip{
+    background:$color-amarillo;
+    font-family: $fontNHass55;
+    width: 420px;
+    position:relative;
+
+    p{
+      padding:20px;
+      letter-spacing: 1px;
+
+    }
+
+
+    &:after
+    {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: 21px;
+      bottom: -30px;
+      border: 15px solid;
+      border-color: $color-amarillo transparent transparent $color-amarillo;
+      
+    }
+
+}//descrip
 
 

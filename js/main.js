@@ -8,29 +8,30 @@ $(function(){
 	$('#pt-main #ingresar').on('click',function() {
 		/* Act on the event */
 		palabraIngresada = $.trim($('input#frase').val().toLowerCase());
-nextPage();
+		nextPage();
 		if (palabraIngresada == ""){
 			console.log('ingresa algo');
 		}
-		
 		if($.inArray(palabraIngresada, palabra ) != -1){
-			nextPage();
+			nextPage(2);
 		}
 	});//ingresar click
 
 
-menu.find('li').on("mouseenter mouseleave click", function(e){
-   var idMenu = $(this).data('menu');
-   if(e.type === "mouseenter"){
-       $('#chapulin').stop().hide();
-       $('div#'+idMenu).stop().fadeIn();
-   }else if(e.type === "mouseleave"){
-        $('#chapulin').stop().fadeIn();  
-        $('div#'+idMenu).stop().fadeOut();     
-   }else{
-   	nextPage();
-   }
-});//menu events
+	menu.find('li').on("mouseenter mouseleave click", function(e){
+	   var idMenu = $(this).data('menu');
+	   if(e.type === "mouseenter"){
+	       $('#chapulin').stop().hide();
+	       $('div#'+idMenu).stop().fadeIn();
+	   }else if(e.type === "mouseleave"){
+	        $('#chapulin').stop().fadeIn();  
+	        $('div#'+idMenu).stop().fadeOut();     
+	   }else{
+	   	var $pantalla = $(this).data('pagina'),
+	   		$paginaCargar = idMenu;
+	   		nextPage($pantalla, $paginaCargar);
+	   }
+	});//menu events
 
 
 
@@ -60,37 +61,54 @@ menu.find('li').on("mouseenter mouseleave click", function(e){
 	function init() {
 		$pages.each( function() {
 			var $page = $( this );
-			$page.data( 'originalClassList', $page.attr( 'class' ) );
-		} );
-
-		$pages.eq( current ).addClass( 'pt-page-current' );
-
-		$iterate.on( 'click', function() {
-			nextPage( );
-		} );
+			$page.data( 'originalClassList', $page.attr( 'class' ));
+		});
+		$pages.eq(current).addClass('pt-page-current');
 	}
 
-	function nextPage( animation ) {
-
+	//console.log($pages.eq(current));
+	
+	function nextPage($pantalla , $paginaCargar) {
 		if( isAnimating ) {
 			return false;
 		}
-
 		isAnimating = true;
+		var $currPage = $pages.eq(current);
+		current = $pantalla - 2;
+
+		paginaCargar = 'internas/' + $paginaCargar + '.html';
+		console.log(paginaCargar);
+
 		
-		var $currPage = $pages.eq( current );
 
-		if( current < pagesCount - 1 ) {
-			++current;
-		}
-		else {
-			current = 0;
-		}
 
-		var $nextPage = $pages.eq( current ).addClass( 'pt-page-current' ),
+
+
+		var $nextPage = $pages.eq(current).addClass( 'pt-page-current' ),
 			outClass = '', inClass = '';
 			outClass = 'pt-page-rotateFall pt-page-ontop';
 			inClass = 'pt-page-scaleUp';
+
+		
+			$.ajax({
+				url: paginaCargar,
+				type: 'POST',
+				dataType: 'html',
+				//data: {param1: 'value1'},
+			
+				beforeSend: function(data) {
+					console.log("success");
+				},
+				success: function(data) {
+					$nextPage.html(data);
+				},
+				error: function(data) {
+					//console.log("complete");
+				}
+			});
+
+
+
 
 		$currPage.addClass( outClass ).on( animEndEventName, function() {
 			$currPage.off( animEndEventName );
@@ -114,7 +132,7 @@ menu.find('li').on("mouseenter mouseleave click", function(e){
 
 	}
 
-	function onEndAnimation( $outpage, $inpage ) {
+	function onEndAnimation($outpage, $inpage) {
 		endCurrPage = false;
 		endNextPage = false;
 		resetPage( $outpage, $inpage );

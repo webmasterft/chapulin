@@ -34,13 +34,28 @@
         <!--[if lt IE 9]>
             <p class="chromeframe">Este sitio está optimizado para navegadores modernos como Chrome o Firefox. Por favor <a href="http://browsehappy.com/">descargue uno moderno</a> o <a href="http://www.google.com/chromeframe/?redirect=true">active Google Chrome Frame </a>para mejorar su experiencia en la navegación.</p>
         <![endif]-->
-       
-        
-        <div id="pt-main" class="pt-perspective">            <!-- <div class
-="pt-page pt-page-1">                 <div class=" container">
-<input type="text" id="frase" name="frase"><br/>                     <button
-id="ingresar">Ingresar</button>                 </div><!-- container -->
-<!--</div><!-- pt-page-1 -->
+        <div class="contenedorMenu">
+            <ul id="menu">
+                <li data-menu="personaje" data-pagina="3">Chapulin</li>
+                <i class="fa fa-fw"></i>
+                <li data-menu="armas" data-pagina="4">Chipote</li>
+                <i class="fa fa-fw"></i>
+                <li data-menu="villanos" data-pagina="5">Rascabuche</li>
+                <i class="fa fa-fw"></i>
+                <li data-menu="psicologia" data-pagina="6">Chichicuilote</li>
+                <i class="fa fa-fw"></i>
+                <li data-menu="cronologia" data-pagina="7">Chanfle</li>
+            </ul>       
+        </div>
+
+
+        <div id="pt-main" class="pt-perspective">            
+            <!--<div class="pt-page pt-page-1">                 
+                <div class=" container">
+                    <input type="text" id="frase" name="frase"><br/>                     
+                    <button id="ingresar">Ingresar</button>
+                </div> 
+            </div> -->
             
 
 
@@ -82,26 +97,18 @@ id="ingresar">Ingresar</button>                 </div><!-- container -->
                         <img id="idTxt" src="img/cronologia.png" width="265" height="87">
                         <img id="idGraph" src="img/cronologia2.png" width="524" height="482">
                     </div>   
+                </div> 
+            </div>
 
 
-                    <ul id="menu">
-                        <li data-menu="personaje">Chapulin</li>
-                        <i class="fa fa-fw"></i>
-                        <li data-menu="armas">Chipote</li>
-                        <i class="fa fa-fw"></i>
-                        <li data-menu="villanos">Rascabuche</li>
-                        <i class="fa fa-fw"></i>
-                        <li data-menu="psicologia">Chichicuilote</li>
-                        <i class="fa fa-fw"></i>
-                        <li data-menu="cronologia">Chanfle</li>
-                    </ul>
-                </div><!-- container -->    
-            </div><!-- pt-page-2 -->
 
-            <div class="pt-page pt-page-3"><h1><span>A collection of</span><strong>Page</strong> Transitions</h1></div>
-            <div class="pt-page pt-page-4"><h1><span>A collection of</span><strong>Page</strong> Transitions</h1></div>
-            <div class="pt-page pt-page-5"><h1><span>A collection of</span><strong>Page</strong> Transitions</h1></div>
-            <div class="pt-page pt-page-6"><h1><span>A collection of</span><strong>Page</strong> Transitions</h1></div>
+
+
+            <div class="pt-page pt-page-3"></div>
+            <div class="pt-page pt-page-4">Pagina 4</div>
+            <div class="pt-page pt-page-5">Pagina 5</div>
+            <div class="pt-page pt-page-6">Pagina 6</div>
+            <div class="pt-page pt-page-6">Pagina 7</div>
         </div>
 
         <div class="pt-message">
