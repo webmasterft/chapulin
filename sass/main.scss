@@ -37,17 +37,17 @@ body{
 
 
 .container{
-	width:$wapperWidth;
+  width:$wapperWidth;
   height: 649px;
-	margin: 0px auto;
-	position:relative;
+  margin: 0px auto;
+  position:relative;
   display: block;
   padding:0;
 }
 
 
 .contInt{
-  margin:30px;
+  margin:30px 10px;
 }
 
 .contenedorMenu{
@@ -58,11 +58,11 @@ body{
 }
 
 .left{
-	float:left;
+  float:left;
 }
 
 .right{
-	float:right;
+  float:right;
 }
 
 button{
@@ -164,7 +164,7 @@ button{
 
 #menu{
   position:absolute;
-  top:563px;
+  top:763px;
   z-index: 9999;
   margin-left: -250px;
   left: 50%;
@@ -274,52 +274,316 @@ button{
   height: 457px;
 }
 
-#personaje2{
- @extend #personaje1;
-  background: url(../img/personaje2.jpg) no-repeat;
-  position: relative;
-}
 
-.punto{
-  width: 20px;
-  height: 20px;
-  @include border-radius(50%, 50%);
-  color: $color-rojo;
-  font-weight: bold;
-  text-align: center;
-  line-height: 20px;
-  background:$color-white;
-  position:absolute;
+div.container{
   
-  &.antenitas{
-    top:52px;
-    left:255px;
-  }
+  &.personaje2{
+        div.panel{
+          width: 285px;
+          height: 313px;
+          text-align: center;
+          background:none;
+          margin-top: 10px;
+          display: none;
+          p.tit{
+            color:$color-amarillo;
+            font-size: $baseFontSize + 6;
+            font-family:$fontNHass55;
+          }
+          p.txt{
+            margin-top: -10px;
+          }
+          
+          &#antenitas{
+            display: block;
+          }
 
-  &.traje{
-    top: 134px;
-    left: 211px;
-  }
-  &.escudo{
-    top: 169px;
-    left: 250px;
-  }
-
-  &.pantaloncillos{
-    top: 239px;
-    left: 275px;
-  }
-
-  &.alas{
-    top: 300px;
-    left: 192px;
-  }
-
-  &.zapatos{
-    top: 300px;
-    left: 192px;
-  }
+        }//panel
 
 
-}//puntos
+        #personaje2{
+          @extend #personaje1;
+          background: url(../img/personaje2.jpg) no-repeat;
+          position: relative;
+
+            .punto{
+              width: 20px;
+              height: 20px;
+              @include border-radius(50%, 50%);
+              color: $color-rojo;
+              font-weight: bold;
+              text-align: center;
+              line-height: 20px;
+              background:$color-white;
+              position:absolute;
+              cursor:pointer;
+              
+              &.antenitas{
+                top:52px;
+                left:255px;
+              }
+
+              &.traje{
+                top: 134px;
+                left: 211px;
+              }
+              &.escudo{
+                top: 169px;
+                left: 250px;
+              }
+
+              &.pantaloncillos{
+                top: 239px;
+                left: 275px;
+              }
+
+              &.alas{
+                top: 300px;
+                left: 192px;
+              }
+
+              &.zapatos{
+                top: 414px;
+                left: 221px;
+              }
+            }//puntos
+
+        }//#personaje2
+      }//.personaje2
+
+    &.armas{
+        #txtDescrip{
+          width: 260px;
+        }   
+
+      &.armas1{
+        #txtDescrip{
+          margin-top: 115px;
+        }   
+      }
+
+      &.armas2{
+        #txtDescrip{
+          margin-top: 65px;
+        }   
+      }
+
+      &.armas3{
+        #txtDescrip{
+          margin-top: 160px;
+        }   
+      }
+
+      &.armas4{
+        #txtDescrip{
+          margin-top: 155px;
+        }   
+      }
+
+
+      #armas1{
+        @extend #personaje1;
+        background: url(../img/arma1.jpg) no-repeat;
+        position: relative;
+        width: 615px;
+        height: 439px;
+
+      }//#armas1
+
+      #armas2{
+        @extend #armas1;
+        background: url(../img/arma2.jpg) no-repeat;
+        position: relative;
+
+      }//#armas1
+
+      #armas3{
+        @extend #armas1;
+        background: url(../img/arma3.jpg) no-repeat;
+        position: relative;
+
+      }//#armas1
+
+      #armas4{
+        @extend #armas1;
+        background: url(../img/arma4.jpg) no-repeat;
+        position: relative;
+
+      }//#armas1
+
+      .punto{
+        background:url('../img/circulito.png') no-repeat;
+        width: 52px;
+        height: 50px;
+        position:absolute;
+        cursor: pointer;
+        &.cabeza{
+          top: 185px;
+          left: 74px;
+        }  
+        &.mango{
+          top: 300px;
+          left: 321px;
+        }
+        &.pito{
+          top: 231px;
+          left: 150px;
+        }  
+
+        &.ondas{
+          top: 20px;
+          left: 150px;
+        } 
+        &.antenas{
+          top: 115px;
+          left: 218px;
+        } 
+        &.micro{
+          top: 260px;
+          left: 166px;
+        }
+        &.corneta{
+          top: 97px;
+          left: 119px;
+        }
+        &.camara{
+          top: 224px;
+          left: 324px;
+        }
+
+        &.boton{
+          top: 265px;
+          left: 420px;
+        }
+
+
+      }//puntos
+      
+      .txtAmarillo{
+        display: none;
+      }
+
+      div#cabeza {
+      position: absolute;
+      top: 79px;
+      left: 56px;
+      }
+
+      div#pito {
+        @extend div#cabeza;
+        top: 439px;
+        left: 142px;
+      }
+
+      div#mango {
+        @extend div#cabeza;
+        top: 347px;
+        left: 507px;
+      }
+
+      div#ondas {
+        @extend div#cabeza;
+        top: 122px;
+        left: 54px;
+      }
+
+      div#antenas {
+        @extend div#cabeza;
+        top: 321px;
+        left:74px;
+      }
+      
+      div#micro {
+        @extend div#cabeza;
+        top: 56px;
+        left: 148px;
+      }
+
+      div#corneta {
+        @extend div#cabeza;
+        top: 331px;
+        left: 121px;
+      }
+
+      div#camara {
+        @extend div#cabeza;
+        top: 430px;
+        left: 306px;
+      }
+
+      div#boton {
+        @extend div#cabeza;
+        top: 18px;
+        left: 392px;
+      }
+
+
+      svg{
+        display: none;
+        position: absolute;
+        &#pito{
+          top: 164px;
+          left: 76px;
+        }
+        &#mango{
+          top: 326px;
+          left: 354px;
+        }
+
+        &#ondas{
+          top: 0px;
+          left: 46px;
+        }
+
+        &#antenas{
+          top: 49px;
+          left: 139px;
+        }
+
+        &#micro{
+          top: 77px;
+          left: 190px;
+        }
+        
+        &#corneta{
+          top: 129px;
+          left: 144px;
+        }
+
+        &#camara{
+          top: 259px;
+          left: 350px;
+        }
+
+        &#boton{
+          top: 36px;
+          left: 446px;
+        }
+
+
+      }//svg      
+
+    }//.armas
+
+
+    p.tit{
+      color:$color-amarillo;
+      font-size: $baseFontSize + 6;
+      font-family:$fontNHass55;
+      text-align: center;
+      margin-top: 10px;
+    }
+    p.txt{
+      margin-top: -10px;
+      text-align: center;
+    }
+
+
+
+}//container    
+
+
+
+
+
 

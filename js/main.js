@@ -36,29 +36,39 @@ $(function(){
 	   		pantallaAnimacion = $(this).data('pagina');
 	   		paginaCargar = $(this).data('menu');
 	   		paginaCargar = 'internas/' + paginaCargar + '.html';
-	   		console.log(paginaCargar);
 	   		paginaLista = cargarPaginas(paginaCargar);
 	   		nextPage(pantallaAnimacion);
 	   		$('.pt-page-'+ pantallaAnimacion).html(paginaLista);
 	   }
 	});//menu events
 
-	$(document).on("click", "#menuInt li", function(){
+	$(document).on("click", "ul#menuInt li", function(){
 		paginaCargar = $(this).data('menu');
 		paginaCargar = 'internas/' + paginaCargar + '.html';
 		paginaLista = cargarPaginas(paginaCargar);
 		$('.pt-page-'+ pantallaAnimacion).html(paginaLista);
-	
 	});
 
 
+	$(document).on("click", "div#personaje2 .punto", function(){
+		id = $(this).data('id');
+		$(this).addClass('activo');
+		//if(!$(this).hasClass('activo')){
+			$('#txtDescrip .panel').hide();
+			$('#txtDescrip').find('#'+id).fadeIn();
+		//}
+	});//cambiar caracteristicas del personaje
 
 
+	$(document).on("click", "div.armas .punto", function(){
+		id = $(this).data('id');
+		$('svg#' + id + ', div#' + id ).fadeIn();
+	});//cambiar caracteristicas del personaje
 
 
 /* ANIMACION PAGINAS*/
 //var PageTransitions = (function() {
-	
+
 
 	var $main = $( '#pt-main' ),
 		$pages = $main.children( 'div.pt-page' ),
