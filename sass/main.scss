@@ -277,4 +277,49 @@ button{
 #personaje2{
  @extend #personaje1;
   background: url(../img/personaje2.jpg) no-repeat;
+  position: relative;
 }
+
+.punto{
+  width: 20px;
+  height: 20px;
+  @include border-radius(50%, 50%);
+  color: $color-rojo;
+  font-weight: bold;
+  text-align: center;
+  line-height: 20px;
+  background:$color-white;
+  position:absolute;
+  
+  &.antenitas{
+    top:52px;
+    left:255px;
+  }
+
+  &.traje{
+    top: 134px;
+    left: 211px;
+  }
+  &.escudo{
+    top: 169px;
+    left: 250px;
+  }
+
+  &.pantaloncillos{
+    top: 239px;
+    left: 275px;
+  }
+
+  &.alas{
+    top: 300px;
+    left: 192px;
+  }
+
+  &.zapatos{
+    top: 300px;
+    left: 192px;
+  }
+
+
+}//puntos
+
